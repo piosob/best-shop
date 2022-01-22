@@ -1,0 +1,148 @@
+/*section pricing */
+
+.pricing {
+  .container {
+    width: 1266px;
+
+  }
+
+  h3 {
+    margin: 50px auto;
+    text-align: center;
+    font-size: map-get($font-size, logo-bigger);
+    font-family: map-get($fonts, relaway);
+    font-weight: 400;
+  }
+
+  article {
+    @include flex(column, space-between, center);
+    flex-basis: 29%;
+    position: relative;
+    padding-bottom: 70px;
+    border-radius: 18px;
+
+
+  }
+
+  article:nth-child(2) {
+    flex-grow: 1;
+    margin: 0 4%;
+    box-shadow: 5px 10px 27px map-get($colors, primary-shadow);
+  }
+
+  article:nth-child(1) {
+    border: 1px solid map-get($colors, redish);
+
+    .price {
+      color: map-get($colors, redish);
+      margin-bottom: 70px;
+    }
+
+    a {
+      background-color: map-get($colors, redish);
+    }
+
+    li:nth-child(4), li:nth-child(5) {
+      &::before {
+        background-image: url("/assets/Close.svg");
+      }
+    }
+  }
+
+  article:nth-child(2) {
+    border: 1px solid map-get($colors, primary);
+    align-self: stretch;
+    justify-content: center;
+
+    .price {
+      color: map-get($colors, primary);
+    }
+
+    a {
+      background-color: map-get($colors, primary);
+      box-shadow: 5px 10px 27px map-get($colors, primary-shadow);
+    }
+
+    li:nth-child(5) {
+      &::before {
+        background-image: url("/assets/Close.svg");
+      }
+    }
+  }
+
+  article:nth-child(3) {
+    border: 1px solid map-get($colors, green);
+
+    .price {
+      color: map-get($colors, green);
+    }
+
+    a {
+      background-color: map-get($colors, green);
+    }
+  }
+
+}
+
+.pricing-boxes {
+  @include flex(row, space-between, center);
+  height: 550px;
+
+
+  .box-name {
+    margin: 34px 0 14px 0;
+    font-size: map-get($font-size, statistic);
+    font-family: map-get($fonts, relaway);
+    font-weight: 700;
+  }
+
+  .price {
+
+
+    font-size: map-get($font-size, price);
+    @extend %ffopen;
+    font-weight: 200;
+  }
+
+  .price-description {
+    margin-bottom: 50px;
+    font-size: map-get($font-size, price-desc);
+    font-family: map-get($fonts, relaway);
+    font-weight: 700;
+  }
+
+  li {
+    font-size: map-get($font-size, price-li);
+    @extend %ffopen;
+    font-weight: 400;
+    margin: 24px 0;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 11px;
+      width: 11px;
+      height: 11px;
+      background-image: url("/assets/Ckechmark-1.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  a {
+
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px 57px;
+    border-radius: 25px;
+    font-size: map-get($font-size, price-desc);
+    @extend %ffopen;
+    font-weight: 700;
+    color: #fff;
+
+  }
+}

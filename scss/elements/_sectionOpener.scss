@@ -1,0 +1,30 @@
+/* main */
+.main>* {
+  padding-top: 100px;
+
+}
+/* section opener */
+.opener {
+  height: 93vh;
+  @include flex(column, space-between, center);
+  .opener-slogan-container {
+    flex-grow: 1;
+    @extend %flex-column;
+  }
+  h1 {
+    font-size: map-get($font-size, largest);
+    font-family: map-get($fonts, relaway);
+    font-weight: 400;
+  }
+  p {
+    margin: 38px 0;
+    font-size: map-get($font-size, paragraph);
+    @extend %ffopen;
+    font-weight: 400;
+  }
+  a {
+    @include btn((22px 157px), 40px, #fff);
+    background-color: map-get($colors, primary);
+    box-shadow: 5px 10px 14px map-get($colors, primary-shadow);
+  }
+}

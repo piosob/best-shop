@@ -1,0 +1,52 @@
+/* header styling */
+.header {
+  height: 7vh;
+  box-shadow: 0 3px 6px #00000029;
+
+  * {
+    height: 100%;
+  }
+
+  .container {
+    @include flex(row, space-between, center);
+
+    p {
+      color: map-get($colors, primary);
+      font-size: map-get($font-size, logo);
+      font-family: map-get($fonts, relaway);
+      font-weight: 300;
+      @extend %flex-row;
+    }
+  }
+
+  nav {
+    flex-basis: 50%;
+  }
+
+
+  ul {
+    @include flex(row, space-between, center);
+    @extend %width-height100;
+  }
+
+  a {
+    @extend %flex-row;
+    padding: 0 10px;
+    @extend %curpointer;
+    font-family: map-get($fonts, opensans);
+    @extend %ffopen;
+    @extend %cgrey;
+    font-size: map-get($font-size, smallest);
+    border-bottom: 2px solid transparent;
+    font-weight: 700;
+
+    &:hover {
+      color: #000;
+      border-bottom: 2px solid map-get($colors, primary);
+    }
+
+
+  }
+
+}
+

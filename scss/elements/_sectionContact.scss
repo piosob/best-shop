@@ -1,0 +1,142 @@
+/*section contact */
+.contacts {
+  margin-top: 50px;
+
+  .container {
+    max-width: 896px;
+    @include flex(row, space-between, flex-start);
+
+    & > * {
+      flex-basis: 40%;
+    }
+  }
+
+
+  form {
+    @include flex(column, flex-start, flex-start);
+
+    label:nth-of-type(2) {
+      margin-top: 42px;
+    }
+
+    label {
+      @extend %dblock;
+      font-size: map-get($font-size, smallest);
+      @extend %ffopen;
+      font-weight: 800;
+      color: map-get($colors, primary);
+      letter-spacing: 3.28px;
+
+    }
+
+    input {
+      width: 100%;
+      border-bottom: 1px solid map-get($colors, grey);
+      font-size: map-get($font-size, paragraph);
+      @extend %ffopen;
+      @extend %cgrey;
+      padding-top: 40px;
+      @extend %curpointer;
+
+      &:focus {
+        outline: none;
+        color: #000;
+      }
+    }
+
+    .checkbox-label {
+      margin-top: 42px;
+      @extend %curpointer;
+      display: flex;
+      font-size: map-get($font-size, price-desc);
+      @extend %ffopen;
+      @extend %cgrey;
+      letter-spacing: 0;
+      line-height: 100%;
+      font-weight: 400;
+
+      input {
+        display: none;
+      }
+
+      span {
+        height: 24px;
+        width: 24px;
+        border: 2px solid map-get($colors, grey);;
+        flex-shrink: 0;
+        @extend %curpointer;
+        margin-right: 15px;
+
+        .checkmark {
+          display: none;
+        }
+      }
+
+      & input:checked + span {
+        background-color: #000;
+      }
+    }
+
+    button {
+      align-self: flex-end;
+      margin-top: 24px;
+      @include btn(20px 97px, 35px, #fff);
+      box-shadow: 5px 10px 14px map-get($colors, primary-shadow);
+      font-size: map-get($font-size, price-desc);
+      background-color: map-get($colors, primary);
+      border: none;
+      @extend %dblock;
+      text-align: right;
+
+
+    }
+
+  }
+
+}
+
+//.contacts-info styling
+.contacts-info {
+  height: 100%;
+  @include flex(column, flex-start, flex-start);
+
+  h3 {
+    font-size: map-get($font-size, largest);
+    font-family: map-get($fonts, relaway);
+    font-weight: 400;
+  }
+
+  p {
+    margin: 22px 0 42px 0;
+    font-size: map-get($font-size, paragraph);
+    @extend %ffopen;
+    font-weight: 400;
+  }
+}
+
+.contact-data {
+  width: 100%;
+  @include flex(row, space-between, center);
+
+  & > * {
+    @include flex(row, space-between, center);
+
+  }
+
+  p {
+    @extend %ffopen;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    font-size: map-get($font-size, paragraph);
+    font-weight: 400;
+    @extend %cgrey;
+  }
+
+}
+//
+//
+//#test {
+//  height: 500px;
+//  width: 500px;
+//  background-color: #FB3B64;
+//}

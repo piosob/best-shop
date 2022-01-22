@@ -1,0 +1,66 @@
+/*section statistic */
+.statistic {
+  .container {
+    @include flex(column, space-between, center);
+  }
+  h2 {
+    font-size: map-get($font-size, logo);
+    font-family: map-get($fonts, relaway);
+    font-weight: 400;
+  }
+  .statistic-articles {
+    width: 60%;
+    margin: 75px 0;
+    @include flex(row, space-between, center);
+
+  }
+  .statistic-article {
+    flex-basis: 20%;
+    height: 50%;
+    @include flex(column,space-between, center);
+    position: relative;
+  }
+  .statistic-circle {
+    height: 56px;
+    &::after {
+      content: "";
+      @extend %dblock;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      top: -5%;
+      left: 20%;
+      z-index: -1;
+    }
+  }
+  span {
+    margin: 12px 0;
+    font-size: map-get($font-size, statistic);
+    font-family: map-get($fonts, relaway);
+    font-weight: 700;
+    letter-spacing: 6px;
+  }
+  p {
+    height: 40px;
+    font-size: map-get($font-size, paragraph);
+    font-family: map-get($fonts, relaway);
+    @extend %cgrey;
+    font-weight: 400;
+  }
+}
+.statistic-article:nth-child(1) {
+  .statistic-circle::after {
+    background-color: map-get($colors, redish);
+  }
+}
+.statistic-article:nth-child(2) {
+  .statistic-circle::after {
+    background-color: map-get($colors, primary);
+  }
+}
+.statistic-article:nth-child(3) {
+  .statistic-circle::after {
+    background-color: map-get($colors, green);
+  }
+}
