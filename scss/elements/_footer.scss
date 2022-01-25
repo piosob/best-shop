@@ -58,3 +58,10 @@
     background-color: map-get($colors, primary);
   }
 }
+
+@media (max-width: 500px) {
+  .footer {
+    margin-top: 50px;
+    padding: 0 18px;
+  }
+}

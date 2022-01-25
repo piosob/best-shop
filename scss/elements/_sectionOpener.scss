@@ -1,30 +1,91 @@
 /* main */
-.main>* {
+.main > * {
   padding-top: 100px;
 
 }
+
 /* section opener */
 .opener {
   height: 93vh;
   @include flex(column, space-between, center);
+
   .opener-slogan-container {
     flex-grow: 1;
     @extend %flex-column;
   }
+
   h1 {
     font-size: map-get($font-size, largest);
     font-family: map-get($fonts, relaway);
     font-weight: 400;
   }
+
   p {
     margin: 38px 0;
     font-size: map-get($font-size, paragraph);
     @extend %ffopen;
     font-weight: 400;
   }
+
   a {
     @include btn((22px 157px), 40px, #fff);
     background-color: map-get($colors, primary);
     box-shadow: 5px 10px 14px map-get($colors, primary-shadow);
+  }
+
+  .image {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 50%;
+    background-image: url("../assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 1360px) {
+  .opener {
+    padding-top: 50px;
+    height: calc(100vh - 70px);
+
+    .opener-slogan-container {
+
+
+      p {
+        margin: 19px 0;
+      }
+
+      a {
+        @include btn((11px 79px), 40px, #fff);
+        font-size: map-get($font-size, paragraph);
+      }
+    }
+
+    .image {
+      flex-basis: auto;
+      flex-grow: 5;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .opener {
+    padding-top: 0;
+
+    .opener-slogan-container {
+      h1 {
+        font-size: map-get($font-size, logo);
+      }
+
+      p {
+        font-size: map-get($font-size, price-li);
+      }
+
+      a {
+        @include btn((11px 40px), 40px, #fff);
+        font-size: map-get($font-size, paragraph);
+      }
+    }
   }
 }

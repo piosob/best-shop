@@ -2,7 +2,7 @@
 
 .pricing {
   .container {
-    width: 1266px;
+    max-width: 1266px;
 
   }
 
@@ -12,6 +12,69 @@
     font-size: map-get($font-size, logo-bigger);
     font-family: map-get($fonts, relaway);
     font-weight: 400;
+  }
+
+  .pricing-boxes {
+    @include flex(row, space-between, center);
+    height: 550px;
+
+
+    .box-name {
+      margin: 34px 0 14px 0;
+      font-size: map-get($font-size, statistic);
+      font-family: map-get($fonts, relaway);
+      font-weight: 700;
+    }
+
+    .price {
+
+
+      font-size: map-get($font-size, price);
+      @extend %ffopen;
+      font-weight: 200;
+    }
+
+    .price-description {
+      margin-bottom: 50px;
+      font-size: map-get($font-size, price-desc);
+      font-family: map-get($fonts, relaway);
+      font-weight: 700;
+    }
+
+    li {
+      font-size: map-get($font-size, price-li);
+      @extend %ffopen;
+      font-weight: 400;
+      margin: 24px 0;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        margin-right: 11px;
+        width: 11px;
+        height: 11px;
+        background-image: url("/assets/Ckechmark-1.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    a {
+
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 16px 57px;
+      border-radius: 25px;
+      font-size: map-get($font-size, price-desc);
+      @extend %ffopen;
+      font-weight: 700;
+      color: #fff;
+
+    }
   }
 
   article {
@@ -24,11 +87,6 @@
 
   }
 
-  article:nth-child(2) {
-    flex-grow: 1;
-    margin: 0 4%;
-    box-shadow: 5px 10px 27px map-get($colors, primary-shadow);
-  }
 
   article:nth-child(1) {
     border: 1px solid map-get($colors, redish);
@@ -50,6 +108,9 @@
   }
 
   article:nth-child(2) {
+    flex-grow: 1;
+    margin: 0 4%;
+    box-shadow: 5px 10px 27px map-get($colors, primary-shadow);
     border: 1px solid map-get($colors, primary);
     align-self: stretch;
     justify-content: center;
@@ -84,65 +145,69 @@
 
 }
 
-.pricing-boxes {
-  @include flex(row, space-between, center);
-  height: 550px;
+@media (max-width: 1300px) {
 
-
-  .box-name {
-    margin: 34px 0 14px 0;
-    font-size: map-get($font-size, statistic);
-    font-family: map-get($fonts, relaway);
-    font-weight: 700;
-  }
-
-  .price {
-
-
-    font-size: map-get($font-size, price);
-    @extend %ffopen;
-    font-weight: 200;
-  }
-
-  .price-description {
-    margin-bottom: 50px;
-    font-size: map-get($font-size, price-desc);
-    font-family: map-get($fonts, relaway);
-    font-weight: 700;
-  }
-
-  li {
-    font-size: map-get($font-size, price-li);
-    @extend %ffopen;
-    font-weight: 400;
-    margin: 24px 0;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      margin-right: 11px;
-      width: 11px;
-      height: 11px;
-      background-image: url("/assets/Ckechmark-1.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+  .pricing {
+    .container {
+      max-width: 100%;
+      padding: 0 18px;
     }
   }
+}
 
-  a {
+@media (max-width: 900px) {
 
-    position: absolute;
-    z-index: 2;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 16px 57px;
-    border-radius: 25px;
-    font-size: map-get($font-size, price-desc);
-    @extend %ffopen;
-    font-weight: 700;
-    color: #fff;
+  .pricing {
+    padding-top: 50px;
 
+    h3 {
+      margin: 25px auto;
+    }
+
+
+    .pricing-boxes {
+      @include flex(column, space-between, center);
+      height: auto;
+      gap: 48px;
+
+
+      article {
+        @include flex(row, space-evenly, center);
+        width: 90%;
+        padding-bottom: 24px;
+      }
+
+      .left-content {
+        @include flex(column, center, center);
+        gap: 6px
+      }
+
+      .box-name {
+        margin: 0;
+      }
+
+      .price {
+        margin: 0;
+      }
+
+      .price-description {
+        margin-bottom: 0;
+      }
+    }
+
+
+    article:nth-child(1) {
+
+      .price {
+        margin-bottom: 0;
+      }
+    }
+
+    article:nth-child(2) {
+      flex-grow: unset;
+      width: 100%;
+      margin: 0;
+
+    }
   }
 }

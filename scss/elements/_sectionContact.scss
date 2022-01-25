@@ -11,7 +11,6 @@
     }
   }
 
-
   form {
     @include flex(column, flex-start, flex-start);
 
@@ -26,7 +25,6 @@
       font-weight: 800;
       color: map-get($colors, primary);
       letter-spacing: 3.28px;
-
     }
 
     input {
@@ -87,12 +85,8 @@
       border: none;
       @extend %dblock;
       text-align: right;
-
-
     }
-
   }
-
 }
 
 //.contacts-info styling
@@ -120,7 +114,6 @@
 
   & > * {
     @include flex(row, space-between, center);
-
   }
 
   p {
@@ -131,12 +124,71 @@
     font-weight: 400;
     @extend %cgrey;
   }
-
 }
-//
-//
-//#test {
-//  height: 500px;
-//  width: 500px;
-//  background-color: #FB3B64;
-//}
+
+@media (max-width: 950px) {
+  .contacts {
+    margin-top: 24px;
+    padding-top: 24px;
+
+    .container {
+      max-width: 90%;
+      padding: 0 18px;
+      @include flex(column, space-between, center);
+    }
+  }
+  .contact-data {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contacts {
+    .container {
+      max-width: 100%;
+
+      align-items: flex-start;
+    }
+
+    form {
+      label:nth-of-type(2) {
+        margin-top: 21px;
+      }
+
+      label {
+        margin-top: 24px;
+      }
+
+      input {
+        padding-top: 20px;
+      }
+    }
+
+    .contacts-info {
+      @include flex(column, flex-start, flex-start);
+
+      h3 {
+        font-size: 40px;
+      }
+
+      p {
+        margin: 11px 0 21px 0;
+      }
+    }
+
+    .contact-data {
+      width: 100%;
+      @include flex(column, space-between, flex-start);
+      gap: 12px;
+
+      & > * {
+        @include flex(row, space-between, center);
+      }
+
+      p {
+        margin: 0 0 0 10px;
+        color: map-get($colors, grey);
+      }
+    }
+  }
+}

@@ -3,25 +3,30 @@
   .container {
     @include flex(column, space-between, center);
   }
+
   h2 {
     font-size: map-get($font-size, logo);
     font-family: map-get($fonts, relaway);
     font-weight: 400;
   }
+
   .statistic-articles {
     width: 60%;
     margin: 75px 0;
     @include flex(row, space-between, center);
 
   }
+
   .statistic-article {
     flex-basis: 20%;
     height: 50%;
-    @include flex(column,space-between, center);
+    @include flex(column, space-between, center);
     position: relative;
   }
+
   .statistic-circle {
     height: 56px;
+
     &::after {
       content: "";
       @extend %dblock;
@@ -34,6 +39,7 @@
       z-index: -1;
     }
   }
+
   span {
     margin: 12px 0;
     font-size: map-get($font-size, statistic);
@@ -41,6 +47,7 @@
     font-weight: 700;
     letter-spacing: 6px;
   }
+
   p {
     height: 40px;
     font-size: map-get($font-size, paragraph);
@@ -49,18 +56,74 @@
     font-weight: 400;
   }
 }
+
 .statistic-article:nth-child(1) {
   .statistic-circle::after {
     background-color: map-get($colors, redish);
   }
 }
+
 .statistic-article:nth-child(2) {
   .statistic-circle::after {
     background-color: map-get($colors, primary);
   }
 }
+
 .statistic-article:nth-child(3) {
   .statistic-circle::after {
     background-color: map-get($colors, green);
   }
+}
+
+@media (max-width: 670px) {
+  .statistic {
+    .container {
+      max-width: 100%;
+      padding: 0 12px;
+    }
+
+    h2 {
+      margin: 0 48px;
+      text-align: center;
+    }
+
+    .statistic-articles {
+      width: 100%;
+      padding: 0 24px;
+
+    }
+
+  }
+}
+
+@media (max-width: 670px) {
+  .statistic {
+    padding-top: 24px;
+
+    h2 {
+      font-size: map-get($font-size, statistic);
+    }
+
+    .statistic-articles {
+      padding: 0 12px;
+      margin: 24px 0;
+      @include flex(column, space-between, center);
+
+    }
+
+    .statistic-article {
+      margin: 12px 0;
+      @include flex(column, space-between, center);
+    }
+
+    .statistic-circle {
+      height: calc(56px * 0.75);
+
+      &::after {
+        width: calc(60px * 0.75);
+        height: calc(60px * 0.75);
+      }
+    }
+  }
+
 }

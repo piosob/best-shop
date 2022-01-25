@@ -1,5 +1,9 @@
 /* header styling */
 .header {
+  .burger {
+    display: none;
+  }
+
   height: 7vh;
   box-shadow: 0 3px 6px #00000029;
 
@@ -50,3 +54,91 @@
 
 }
 
+@media (max-width: 1360px) {
+  .header {
+    height: 70px;
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 150px 3fr minmax(300px, 1fr) 1fr;
+    }
+
+    p {
+      grid-column: 2/3;
+    }
+
+    nav {
+      grid-column: 4/5;
+    }
+
+  }
+
+}
+
+@media (max-width: 550px) {
+  .header {
+
+    .active {
+      transform: scale(1, 1);
+    }
+
+    .container {
+      grid-template-columns: 1fr 150px 4fr 50px 1fr;
+    }
+
+
+    .burger {
+      grid-column: 4/5;
+      @include flex(column, center, center);
+      background: none;
+      border: none;
+
+      span {
+        display: block;
+        margin-top: 8px;
+        width: 20px;
+        height: 2px;
+        background-color: map-get($colors, primary);
+        transition: .8s transform, .4s opacity;
+        opacity: 1;
+
+        &.off {
+          opacity: 0;
+        }
+
+        &.left {
+          transform: translate(0, 10px) rotate(-45deg);
+        }
+
+        &.right {
+          transform: translate(0, -10px) rotate(45deg);
+        }
+      }
+
+
+    }
+
+    nav {
+      position: absolute;
+      padding: 0 12px;
+      top: 82px;
+      left: 0;
+      right: 0;
+      height: 180px;
+      box-shadow: 0px 3px 6px map-get($colors, shadow-grey);
+      transform: scale(1, 0);
+      transition: transform .5s ease-in-out;
+      transform-origin: top;
+      background-color: #fff;
+
+
+      ul {
+        @include flex(column, center, flex-start);
+
+        li {
+        }
+      }
+    }
+  }
+
+}
