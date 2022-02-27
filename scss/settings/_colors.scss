@@ -1,29 +1,27 @@
 @use "sass:map";
 
-$colors: (
-        primary: #08A6E4,
+$colors: (primary: #08A6E4,
         primary-shadow: #07ACE629,
         redish: #FB3B64,
         green: #55DFB4,
         grey: #A5A5A5,
         light-grey: #F7F7F7,
-        shadow-grey: #00000029
-);
+        shadow-grey: #00000029,
+        calc-border: #EB476E,
+        calc-shadow: #EB476E29);
 
 $basic-font-size: 10px;
-$font-size: (
-        smallest: 1.1*$basic-font-size,
+$font-size: (smallest: 1.1*$basic-font-size,
         price-desc: 1.2*$basic-font-size,
+        calc-size: 1.3*$basic-font-size,
         paragraph: 1.6*$basic-font-size,
         price-li: 1.4*$basic-font-size,
         statistic: 2*$basic-font-size,
         logo: 3.2*$basic-font-size,
         logo-bigger: 3.6*$basic-font-size,
+        h2-calc: 4.2*$basic-font-size,
         price: 4.6*$basic-font-size,
-        largest: 4.9*$basic-font-size
-);
+        largest: 4.9*$basic-font-size);
 
-$fonts: (
-        relaway: ('Raleway', sans-serif),
-        opensans: ('Open Sans', sans-serif)
-);
+$fonts: (relaway: ('Raleway', sans-serif),
+        opensans: ('Open Sans', sans-serif));

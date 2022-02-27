@@ -1,0 +1,170 @@
+.calc {
+    margin-top: 100px;
+    background-color: map-get($colors, light-grey);
+    padding-bottom: 100px;
+
+    .container {
+        max-width: 896px;
+
+        @media (max-width: 1024px) {
+            max-width: 100%;
+            padding: 0 18px;
+        }
+
+        h2 {
+            margin-bottom: 50px;
+            text-align: center;
+            color: #000;
+            font-size: map-get($font-size, logo);
+            font-family: map-get($fonts, relaway);
+            font-weight: 400;
+        }
+    }
+
+    .calc__columns {
+        @extend %ffopen;
+        @include flex(row, space-around, flex-start);
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        gap: 50px;
+
+        &>* {
+            flex-basis: 50%;
+
+            @media (max-width: 1024px) {
+                width: 75%;
+            }
+
+            @media (max-width: 800px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .calc__form {
+        & .calc__input:nth-of-type(2) {
+            margin: 20px 0;
+        }
+
+        .form__input,
+        .select__input {
+            box-sizing: border-box;
+            padding: 11px 20px;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid map-get($colors, primary);
+            box-shadow: 0px 3px 6px map-get($colors, primary-shadow);
+            outline: none;
+            font-size: map-get($font-size, calc-size);
+            color: #000;
+
+            &:focus {
+                border: 2px solid map-get($colors, primary);
+            }
+
+            &::placeholder {
+                @extend %ffopen;
+                font-size: map-get($font-size, calc-size);
+                color: map-get($colors, grey);
+            }
+        }
+
+        .select__input {
+            @extend %ffopen;
+            @include flex(row, space-between, center);
+            font-size: map-get($font-size, calc-size);
+            color: map-get($colors, grey);
+            cursor: pointer;
+
+            .fa-circle-arrow-down {
+                color: map-get($colors, primary);
+                font-size: map-get($font-size, statistic);
+            }
+        }
+
+        .select__dropdown {
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 11px 20px;
+            border-radius: 6px;
+            box-shadow: 0px 3px 6px map-get($colors, calc-shadow);
+            border: 1px solid map-get($colors, calc-border);
+            font-size: map-get($font-size, calc-size);
+            cursor: pointer;
+
+            li:nth-of-type(2) {
+                margin: 15px 0;
+            }
+        }
+
+        .form__checkbox {
+            margin-top: 12px;
+            @include flex(row, flex-start, center);
+            gap: 12px;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            & input:checked+span {
+                background-color: map-get($colors, primary);
+
+            }
+
+            .checkbox {
+                display: block;
+                width: 24px;
+                height: 24px;
+                background-color: #ddd;
+                border: 1px solid map-get($colors, grey);
+                border-radius: 4px;
+            }
+
+            .consent__text {
+                display: inline-block;
+            }
+        }
+    }
+
+    .calc__summary {
+        position: relative;
+        min-height: 250px;
+        font-size: map-get($font-size, price-li);
+
+        .list__item {
+            padding: 6px 20px;
+            margin-bottom: 8px;
+            color: #fff;
+            background-color: map-get($colors, green);
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 6px;
+        }
+
+        .summary__total {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 20px;
+            font-size: map-get($font-size, price-li);
+            background-color: map-get($colors, primary);
+            color: #fff;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 6px;
+
+            .total__price {
+
+                display: inline-block;
+                margin-left: 50px;
+                font-size: map-get($font-size, statistic);
+                font-weight: bold;
+            }
+        }
+    }
+}
