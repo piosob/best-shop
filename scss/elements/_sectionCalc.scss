@@ -112,7 +112,9 @@
             }
 
             & input:checked+span {
-                background-color: map-get($colors, primary);
+                background-image: url(../../assets/Checkmark.svg);
+                background-size: contain;
+                background-position: center;
 
             }
 

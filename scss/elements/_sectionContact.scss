@@ -6,7 +6,7 @@
     max-width: 896px;
     @include flex(row, space-between, flex-start);
 
-    & > * {
+    &>* {
       flex-basis: 40%;
     }
   }
@@ -60,7 +60,8 @@
       span {
         height: 24px;
         width: 24px;
-        border: 2px solid map-get($colors, grey);;
+        border: 2px solid map-get($colors, grey);
+        ;
         flex-shrink: 0;
         @extend %curpointer;
         margin-right: 15px;
@@ -70,8 +71,10 @@
         }
       }
 
-      & input:checked + span {
-        background-color: #000;
+      & input:checked+span {
+        background-image: url(../../assets/Checkmark.svg);
+        background-size: contain;
+        background-position: center;
       }
     }
 
@@ -112,7 +115,7 @@
   width: 100%;
   @include flex(row, space-between, center);
 
-  & > * {
+  &>* {
     @include flex(row, space-between, center);
   }
 
@@ -137,6 +140,7 @@
       @include flex(column, space-between, center);
     }
   }
+
   .contact-data {
     margin-bottom: 24px;
   }
@@ -181,7 +185,7 @@
       @include flex(column, space-between, flex-start);
       gap: 12px;
 
-      & > * {
+      &>* {
         @include flex(row, space-between, center);
       }
 
