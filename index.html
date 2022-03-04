@@ -181,7 +181,7 @@
                                 <i class="fa-solid fa-circle-arrow-down"></i>
                             </div>
 
-                            <ul class="select__dropdown">
+                            <ul class="select__dropdown d-none">
                                 <li data-value="basic">Basic</li>
                                 <li data-value="professional">Professional</li>
                                 <li data-value="premium">Premium</li>
@@ -201,33 +201,39 @@
 
                     <div class="calc__summary">
                         <ul>
+                            <!-- <li class="list__item d-none" data-id="products"> -->
                             <li class="list__item" data-id="products">
                                 <span class="item__type">Products</span>
-                                <span class="item__calc">20 * $0.5</span>
-                                <span class="item__price">$10</span>
+                                <span class="item__calc"></span>
+                                <span class="item__price">$0</span>
                             </li>
+                            <!-- <li class="list__item d-none" data-id="orders"> -->
                             <li class="list__item" data-id="orders">
                                 <span class="item__type">Orders</span>
-                                <span class="item__calc">20 * $0.5</span>
-                                <span class="item__price">$10</span>
+                                <span class="item__calc"></span>
+                                <span class="item__price">$0</span>
                             </li>
+                            <!-- <li class="list__item d-none" data-id="package"> -->
                             <li class="list__item" data-id="package">
                                 <span class="item__type">Package</span>
-                                <span class="item__calc">Premium</span>
-                                <span class="item__price">$10</span>
+                                <span class="item__calc"></span>
+                                <span class="item__price">$0</span>
                             </li>
+                            <!-- <li class="list__item d-none" data-id="accounting"> -->
                             <li class="list__item" data-id="accounting">
                                 <span class="item__type">Accounting</span>
-                                <span class="item__price">$10</span>
+                                <span class="item__price">$0</span>
                             </li>
+                            <!-- <li class="list__item d-none" data-id="terminal"> -->
                             <li class="list__item" data-id="terminal">
                                 <span class="item__type">Terminal</span>
-                                <span class="item__price">$10</span>
+                                <span class="item__price">$0</span>
                             </li>
                         </ul>
+                        <!-- <div class="summary__total d-none" id="total-price"> -->
                         <div class="summary__total" id="total-price">
                             <span>Total</span>
-                            <span class="total__price">$700</span>
+                            <span class="total__price"></span>
                         </div>
                     </div>
                 </div>
@@ -320,7 +326,8 @@
         <p>© 2019 BestShop LTD, All Rights Reserved</p>
 
     </footer>
-    <script src="main.js"></script>
+    <script src="js/calc.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

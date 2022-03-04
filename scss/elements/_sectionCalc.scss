@@ -96,6 +96,10 @@
             font-size: map-get($font-size, calc-size);
             cursor: pointer;
 
+            &.d-none {
+                display: none;
+            }
+
             li:nth-of-type(2) {
                 margin: 15px 0;
             }
@@ -129,6 +133,8 @@
 
             .consent__text {
                 display: inline-block;
+                font-size: map-get($font-size, calc-size);
+                color: map-get($colors, grey);
             }
         }
     }
@@ -139,20 +145,28 @@
         font-size: map-get($font-size, price-li);
 
         .list__item {
+            @include flex(row, space-between, center);
             padding: 6px 20px;
             margin-bottom: 8px;
             color: #fff;
             background-color: map-get($colors, green);
             box-shadow: 0px 3px 6px #00000029;
             border-radius: 6px;
+
+            &.d-none {
+                display: none;
+            }
+
+            .item__price {
+                font-size: map-get($font-size, item-price);
+                font-weight: bold;
+            }
         }
 
         .summary__total {
             position: absolute;
             right: 0;
-            bottom: 0;
-            display: inline-block;
-            margin-top: 20px;
+            bottom: -10px;
             padding: 6px 20px;
             font-size: map-get($font-size, price-li);
             background-color: map-get($colors, primary);
