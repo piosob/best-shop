@@ -1225,6 +1225,9 @@ img {
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 6px;
 }
+.calc .calc__summary .summary__total.d-none {
+  display: none;
+}
 .calc .calc__summary .summary__total .total__price {
   display: inline-block;
   margin-left: 50px;
