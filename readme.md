@@ -4,4 +4,4 @@
 
 
 ###Demo page
-https://best-shop-form-cl.vercel.app/
+https://piosob.github.io/best-shop-form-cl/
