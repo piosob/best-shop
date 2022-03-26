@@ -4,4 +4,4 @@
 
 
 ###Demo page
-https://piosob.github.io/best-shop-form-cl/
+ https://piosob.github.io/best-shop/
